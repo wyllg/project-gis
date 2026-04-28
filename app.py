@@ -10,6 +10,7 @@ import requests
 from geopy.distance import geodesic
 import random 
 
+
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
 
@@ -36,8 +37,11 @@ for i in range(8):
 
 # Database connection
 DB_CONFIG = {
-    "host": "localhost", "user": "root", "password": "",
-    "database": "pagdaloy", "cursorclass": pymysql.cursors.DictCursor
+    "host": "localhost",
+    "user": "root",
+    "password": "beefwellington",
+    "database": "pagdaloy",
+    "cursorclass": pymysql.cursors.DictCursor
 }
 
 def get_db_connection():

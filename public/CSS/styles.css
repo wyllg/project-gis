@@ -616,11 +616,20 @@ main aside .sidebar-link.active:hover span{
 .dashboard-forecast-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   /* margin-left: 1px; */
   flex: 2;
   min-width: 700px;
   /* align-items: center; */
+}
+
+.forecast-title {
+  font-weight: bold;
+  color: #000080;
+  margin-top: 1rem;
+  text-align: center;
+  text-shadow: 5px 5px 10px #ffff;
+
 }
 
 .chart{
@@ -727,9 +736,12 @@ select:focus {
 
 .dashboard-municipality-section {
   display: flex;
-  flex: 1;
+  flex-grow: 1;
   width: auto;
+  flex-shrink: 0;
 }
+
+
 
 .municipality-charts-container {
   margin-left: 15px;
@@ -743,7 +755,7 @@ select:focus {
 
 .chart-container {
   width: 700px; 
-  height: 350px; 
+  height: 400px; 
   /* max-width: 100%;
   min-width: 300px; */
   margin: 20px 0;
@@ -907,9 +919,11 @@ canvas {
 
 /*================= MAP ==================*/
 .mapContent {
-  padding-top: 2rem;
+  padding-top: 0rem;
   padding-bottom: 0.8rem;
   margin-left: 30px;
+  display: block !important;
+  justify-content: center;
 }
 
 h2{
@@ -922,7 +936,7 @@ h2{
 /* Style for the iframe */
 iframe {
   width: 100%; /* Set the width to 100% of its container */
-  height: 630px; /* Set the height to your desired value */
+  height: 75vh; /* Set the height to your desired value */
   border-radius: var(--border-raidus-1);
   overflow: hidden; /* Hide any overflow content */
 }
@@ -1202,6 +1216,33 @@ iframe {
 
 @media (min-width: 768px) {
   .h-md-250 { height: 250px; }
+}
+
+@media (max-width: 1492px) {
+  .dashboard-municipality-section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+  }
+
+  .mapContent {
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0.8rem;
+    margin-left: 0px;
+  }
+
+  .dashboard-forecast-section {
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: start;
+    /* margin-left: 1px; */
+    flex: 1;
+    /* min-width: 700px; */
+    /* align-items: center; */
+  }
 }
 
 .municipality {

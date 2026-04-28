@@ -114,7 +114,7 @@ include('database.php');
         <div id="modal"><img id="custom-modal" src="../img/add_icon.png" alt="add"></div>
         <span class="tooltiptext">Add Piggery</span>
       </div>
-      <!-- <div id="modal"><img id="custom-modal" src="../img/add_icon.png" alt="add"></div> -->
+      
       <div class="tooltip">
         <img id="flow-acc" src="../img/summary_icon.png" alt="">
         <span class="tooltiptext">Lists of Barangays</span>
@@ -123,15 +123,14 @@ include('database.php');
       <div id="clearmarker"><img id="clearme" src="../img/refresh_icon.png" alt="clearmarker"></div>
         <span class="tooltiptext">Refresh</span>
       </div>
-      <!-- <div id="clearmarker"><img id="clearme" src="../img/refresh_icon.png" alt="clearmarker"></div> -->
     </div>
 
     <!--for modification -->
-    <div id="legend">
-      <h1>LEGEND</h1>
+    <!-- <div id="legend">
+      <h1>LEGEND</h1> -->
 
       <!-- 1st Classification: Waterways -->
-      <div id="classification-1">
+      <!-- <div id="classification-1">
         <h2>Waterways</h2>
         <div class="legend-contents" onclick="updateLegend(event, 'waterwaylegend.png', 'Waterways')" onmouseout="resetLegend(event)">
           <img src="../img/waterwaylegend.png" alt="">
@@ -149,30 +148,26 @@ include('database.php');
           <img src="../img/effluentflowlegend.png" alt="">
           <p class="legend-text">Discharge Path</p>
         </div>
-      </div>
+      </div> -->
 
       <!-- 2nd Classification: Barangay and Pig Farm -->
-      <div id="classification-2">
+      <!-- <div id="classification-2">
         <h2>Locality</h2>
         <div class="legend-contents" onclick="updateLegend(event, 'red-pushpin.png', 'Barangay')" onmouseout="resetLegend(event)">
           <img id="markericonlegend" src="../img/red-pushpin.png" alt="">
           <p class="legend-text">Barangay</p>
-        </div>
-        <!-- <div class="legend-contents" onmouseover="updateLegend(event, 'yellow-round-pushpin.png', 'Pig Farm')" onmouseout="resetLegend(event)">
-          <img id="pigfarmlegend" src="../img/yellow-round-pushpin.png" alt="">
-          <p>Pig Farm</p>
         </div> -->
 
 
-        <div class="pig-farm-main-container" onmouseover="showPigFarmSubcategories()" onmouseout="hidePigFarmSubcategories()">
+        <!-- <div class="pig-farm-main-container" onmouseover="showPigFarmSubcategories()" onmouseout="hidePigFarmSubcategories()"> -->
           <!-- Pig Farm Legend -->
-          <div id="pig-farm-container" class="legend-contents" onclick="updateLegend(event, 'green-round-pushpin.png', 'Pig Farm')" onmouseout="resetLegend(event)">
+          <!-- <div id="pig-farm-container" class="legend-contents" onclick="updateLegend(event, 'green-round-pushpin.png', 'Pig Farm')" onmouseout="resetLegend(event)">
             <img id="pigfarmlegend" src="../img/green-round-pushpin.png" alt="">
             <p class="legend-text" id="pig-farm">Pig Farm</p>
-          </div>
+          </div> -->
 
           <!-- Pig Farm Subcategories (Moved Outside Legend) -->
-          <div id="pig-farm-subcategories"  onmouseout="hidePigFarmSubcategories()">
+          <!-- <div id="pig-farm-subcategories"  onmouseout="hidePigFarmSubcategories()">
             <div id="septicTank" class="sanitation-legend-contents" onclick="sanitationLegendUpdate(event, 'septicTank-marker.png', 'Septic Tank')">
               <img class="sanitationlegends" src="../img/septicTank-marker.png" alt="">
               <p>Septic Tank</p>
@@ -202,10 +197,10 @@ include('database.php');
               <p>N/A</p>
             </div>
           </div>
-        </div>
+        </div> -->
         
-      </div>
-    </div>
+      <!-- </div>
+    </div> -->
 
 
 
@@ -310,7 +305,19 @@ include('database.php');
           }
         });
 
-        
+// Function to go fullscreen
+function goFullScreen() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch((err) => {
+      console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+    });
+  }
+}
+
+// Attach event listeners to the buttons to trigger fullscreen mode
+document.getElementById("modal").addEventListener("click", goFullScreen);
+document.getElementById("flow-acc").addEventListener("click", goFullScreen);
+
 
 
 
@@ -554,16 +561,16 @@ include('database.php');
                     // Customize popup content if needed
                     const popupContent = `
                     <div style="font-size: 12px;">
-                  <b style="font-size: 14px;">${markerData.resident_id}</b><br>
-                  <span style="font-weight: bold;">Sow Count:</span> ${markerData.sow_count}<br>
-                  <span style="font-weight: bold;">Boar Count:</span> ${markerData.boar_count}<br>
-                  <span style="font-weight: bold;">Fattener Count:</span> ${markerData.fattener_count}<br>
-                  <span style="font-weight: bold;">Piglet Count:</span> ${markerData.piglet_count}<br>
-                  <span style="font-weight: bold;">Native Count:</span> ${markerData.native_count}<br>
-                  <span style="font-weight: bold;">Latitude:</span> ${markerData.latitude}<br>
-                  <span style="font-weight: bold;">Longitude:</span> ${markerData.longitude}<br>
-                  <span style="font-weight: bold;">Sanitation:</span> ${markerData.sanitation}<br>
-                </div>     
+                      <b style="font-size: 14px;">${markerData.resident_id}</b><br>
+                      <span style="font-weight: bold;">Sow Count:</span> ${markerData.sow_count}<br>
+                      <span style="font-weight: bold;">Boar Count:</span> ${markerData.boar_count}<br>
+                      <span style="font-weight: bold;">Fattener Count:</span> ${markerData.fattener_count}<br>
+                      <span style="font-weight: bold;">Piglet Count:</span> ${markerData.piglet_count}<br>
+                      <span style="font-weight: bold;">Native Count:</span> ${markerData.native_count}<br>
+                      <span style="font-weight: bold;">Latitude:</span> ${markerData.latitude}<br>
+                      <span style="font-weight: bold;">Longitude:</span> ${markerData.longitude}<br>
+                      <span style="font-weight: bold;">Sanitation:</span> ${markerData.sanitation}<br>
+                    </div>     
                     `;
                     marker.bindPopup(popupContent);
 
@@ -588,6 +595,27 @@ include('database.php');
               // Call function to show shape layer based on municipality code
               showShapeLayerBasedOnMunicipalityCode(lowerCaseMunicipalityCode);
               // Get the container div
+
+              var municipalityCoordinates = {
+                  "BAL": [14.03193, 121.095428],
+                  "AGON" : [13.963389, 120.925484],
+                  "ALI": [13.862914, 121.016121],
+                  "CUE": [13.90461431313024, 121.05597251881868],
+                  "LAU": [14.05213019982489, 120.90732456456205],
+                  "MNK": [13.979085952016785, 121.09739159746668],
+                  "SAN": [13.919965859758854, 120.94770603976525],
+                  "STA": [13.875449936908929, 120.97140159298453],
+                  "TAL": [14.106513571117576, 121.01920986439174],
+                  "TAN": [14.09888862387092, 121.09632379483912]
+              };
+
+              var coordinates = municipalityCoordinates[lowerCaseMunicipalityCode]; // Retrieve coordinates for the municipality
+
+              if (coordinates) {
+                console.log("TINGNEEEEE Coordinates for logged-in user:", coordinates);
+                  map.flyTo(coordinates, 13); // Fly to the specified coordinates
+              }
+
               var container = document.getElementById("municipalityContainer");
               // Get the div containing the head
               var headDiv = document.querySelector('.head');

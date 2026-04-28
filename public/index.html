@@ -67,10 +67,10 @@
             <span class="material-icons-sharp">dashboard</span>
             <h4>Dashboard</h4>
           </a>
-          <a href="#mapContent" class="sidebar-link">
+          <!-- <a href="#mapContent" class="sidebar-link">
             <span class="material-icons-sharp">map</span>
             <h4>Map</h4>
-          </a>
+          </a> -->
           <a href="#municipalitiesContent" class="sidebar-link ">
             <span class="material-icons-sharp">water</span>
             <h4>Tributary</h4>
@@ -145,6 +145,7 @@
             <input type="text" id="datePicker" name="date" placeholder="Select Date" class="custom-date-picker">
           </div> -->
           <div class="dashboard-forecast-section">
+            <h1 class="forecast-title">Forecast Effluent Distance Travelled</h3>
             <!-- Tributary Dropdown for Forecast Section -->
             <div class="tributary-forecast-section">
               <!-- <h2>Select Tributary</h2> -->
@@ -168,7 +169,7 @@
               </div>
             </div>
 
-            <div class="flex-container">
+            <!-- <div class="flex-container">
               <div class="flex-box" id="rainfallResult">
                 <h1>Rainfall Volume (per hour)</h1>
                 <div class="rainfallResultContainer">
@@ -185,17 +186,27 @@
                 </div>
                 <img class="pigDischarge" src="img_src\baboyDischarge.png">
               </div>
-            </div>
+            </div> -->
           </div>
           <div class="dashboard-municipality-section">
-            <div class="municipality-charts-container">
+            <!-- <div class="municipality-charts-container">
               <div class="doughnut-container">
                 <canvas id="doughnut" width="300px" height="400px"></canvas>
               </div>
               <div class="barchart-container">
                 <canvas id="barchart" width="340px" height="250px"></canvas>
               </div>
+            </div> -->
+
+            <!-- Content for MAP -->
+            <div id="mapContent" class="middle content-section mapContent">
+              <h2>PROJECT GIS MAP</h2>
+              <div class="frameContainer">
+                <iframe src="./php/index.php" class="iframe"></iframe>
+              </script>
+              </div>
             </div>
+
           </div>
         </div>
 
@@ -212,13 +223,13 @@
 
     
         <!-- Content for MAP -->
-        <div id="mapContent" class="middle content-section mapContent">
+        <!-- <div id="mapContent" class="middle content-section mapContent">
           <h2>PROJECT GIS</h2>
           <div class="frameContainer">
             <iframe src="./php/index.php" class="iframe"></iframe>
           </script>
           </div>
-        </div>
+        </div> -->
     
     
         <!--Content for MUNICIPALITIES-->

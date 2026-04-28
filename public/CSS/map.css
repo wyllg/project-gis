@@ -1,8 +1,17 @@
+.leaflet-container .leaflet-control-attribution {
+  font-size: 8px;
+}
+
+.leaflet-touch .leaflet-control-layers-toggle {
+  width: 35px;
+  height: 35px;
+}
+
 .mapContainer {
-  position: relative;
+  /* position: relative; */
   width: 100%; /* Set the width to 100% of the parent container */
   /* max-width: 950px; */
-  height: 650px; /* Set a fixed height for the map container */
+  height: 100%; /* Set a fixed height for the map container */
   overflow: visible !important; /* Hide any overflow content */
   border-radius: 10px;
   margin-top: 0rem;
@@ -32,23 +41,23 @@
 /* Style for the map element */
 #map {
   width: 100%; /* Set the width to 100% of the map container */
-  height: 100vh; /* Set the height to 100% of the map container */
+  height: 100%; /* Set the height to 100% of the map container */
   
 }
 
 #toggler {
   position: fixed;
-  bottom: 10px;
+  bottom: 50px;
   right: 10px;
-  padding: 8px 12px;
+  padding: 5px 10px;
   background-color: black;
   color: white;
   border: none;
   cursor: pointer;
   border-radius: 5px;
   z-index: 1000;
-  margin-top: 580px;
-        
+  margin-top: 700px;
+  font-size: 10px;
 }
 
 #toggler:hover {
@@ -97,10 +106,12 @@
 #home {
   position: fixed;
   z-index: 9999;
-  bottom: 10px;
-  left: 10px;
-  margin: 20px; /* Add more margin to the container */
+  bottom: 20px;
+  left: 5px;
+  margin: 10px;
+  margin-left: 2px;
   padding: 10px;
+  padding-left: 2px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -162,8 +173,8 @@ opacity: 0.5;
 #custom-modal,
 #clearme,
 #flow-acc { /* Apply margin and adjust size to all items */
-  margin-bottom: 10px; /* Add more margin to the bottom of each item */
-  height: 60px; /* Increase the height of the logos */
+  margin-bottom: 5px; /* Add more margin to the bottom of each item */
+  height: 40px; /* Increase the height of the logos */
   width: auto; /* Ensure the logos maintain their aspect ratio */
   border-radius: 50%;
   cursor: pointer;
@@ -404,9 +415,9 @@ input {
   padding: 0.5rem;
   /* font-family: 'Roboto', sans-serif; */
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
+  font-size: 12px;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   color: #05161A;
   /* background-color: #fffefe; */
 }
